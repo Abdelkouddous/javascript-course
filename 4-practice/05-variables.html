@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>variables</title>
+</head>
+<body style="height: 1000px;">
+  <div style="
+    display: inline-block inline-flex;
+    position:fixed;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 25%;"> 
+    <button onclick="
+    var1++;
+    console.log('Cart qtt: + ' + var1);">add +1
+    </button>
+  <button onclick="
+  var1+=2;
+  console.log('Cart qtt: + ' + var1);">add +2
+  </button>
+
+  <button onclick="
+  var1+=3;
+  console.log('Cart qtt: + ' + var1);">add +3
+  </button>
+</div>
+ <div style="
+ display:  inline-flex;
+ flex-direction: column;
+ width: 24%;
+ margin-top: 50px;">
+  <button onclick="
+  var1=0;
+  console.log('Cart reset \n Cart qtt:  ' + var1);">reset
+  </button>
+</div>
+  
+
+
+  <script>
+    let var1=0;
+   // document.write(var1);
+    console.log(var1);
+  </script>
+  
+</body>
+</html>
