@@ -1,0 +1,39 @@
+body {
+  background: linear-gradient(to right, #b223ff, #8100b4);
+  margin: 50px;
+}
+p {
+  color: rgb(49, 49, 49);
+  font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+}
+.navbar {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  padding: 0;
+  margin: 0px;
+  align-items: center;
+  justify-content: space-between;
+  right: 0;
+  top: 0;
+}
+
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  padding-top: 50px;
+  margin: -50px;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar,
+.sidebar {
+  font-size: 12px;
+  color: #fdf9ff;
+}
+.div-content {
+  margin: 20px;
+  background-color: #fdf9ff;
+}
