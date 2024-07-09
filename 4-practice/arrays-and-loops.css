@@ -3,7 +3,7 @@ body {
   margin: 50px;
 }
 p {
-  color: rgb(49, 49, 49);
+  color: rgb(255, 255, 255);
   font-weight: bold;
   font-family: "Courier New", Courier, monospace;
 }
@@ -13,10 +13,10 @@ p {
   position: fixed;
   padding: 0;
   margin: 0px;
-  align-items: center;
-  justify-content: space-between;
-  right: 0;
+  vertical-align: center;
+  /* justify-content: space-between; */
   top: 0;
+  margin: auto;
 }
 
 .sidebar {
@@ -33,7 +33,41 @@ p {
   font-size: 12px;
   color: #fdf9ff;
 }
+/* to do grid */
 .div-content {
-  margin: 20px;
-  background-color: #fdf9ff;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-left: 10px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  column-gap: 20px;
+  row-gap: 10px;
+  /* background-color: #fdf9ff; */
+  background: linear-gradient(
+    to right,
+    rgba(178, 35, 255, 0),
+    rgba(129, 0, 180, 0.3)
+  );
+}
+/* //buttoons */
+.add-btn {
+  background-color: rgb(3, 101, 181);
+}
+.delete-btn {
+  background-color: rgb(118, 0, 75);
+}
+.delete-btn,
+.add-btn {
+  width: 80px;
+  height: 30px;
+  border-radius: 12px;
+  color: whitesmoke;
+  font-style: italic;
+  font-weight: bold;
+}
+
+input {
+  border-radius: 12px;
+  text-align: center;
+  place-content: center;
 }
