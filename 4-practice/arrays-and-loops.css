@@ -71,3 +71,15 @@ input {
   text-align: center;
   place-content: center;
 }
+
+.div-content-add {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* background-color: #fdf9ff; */
+  background: linear-gradient(
+    to right,
+    rgba(178, 35, 255, 0),
+    rgba(129, 0, 180, 0.3)
+  );
+}
