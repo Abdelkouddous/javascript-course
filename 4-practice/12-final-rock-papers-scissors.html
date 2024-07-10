@@ -8,22 +8,26 @@
 </head>
 <body>
     <div class = ''>   
-      <h1> Rock Paper Scissors 
+      <h1> Rock Paper Scissors </h1>
         <button class="js-btn-switch btn-switch" onclick="switchMode()"> 
           ! </button>
-        </h1>
+     
+        <p> Shortcuts : <br> P : Paper <br>R : Rock <br>S : Scissors</p>
     </div>
    
     <div>
-        <button onclick="playGame('rock');" class="btn-auto">
+        <!-- <button onclick="playGame('rock');" class="btn-auto js-rock-btn"> -->
+          <button class="btn-auto js-rock-btn">
           <img src="images/rock-emoji.png" 
           class="move-icn">
         </button>
-        <button onclick="playGame('paper');" class="btn-auto">
+        <button class="btn-auto js-paper-btn">
+          <!-- <button onclick="playGame('paper');" class="btn-auto js-paper-btn"> -->
           <img src="images/paper-emoji.png" 
           class="move-icn">
         </button>
-        <button onclick="playGame('scissors'); " class="btn-auto" >
+        <!-- <button onclick="playGame('scissors'); " class="btn-auto js-scissors-btn" > -->
+          <button  class="btn-auto js-scissors-btn" > 
             <img src="images/scissors-emoji.png" alt="scissor"
             class="move-icn">
         </button>
@@ -48,7 +52,9 @@
             <button onclick="autoPlay()" class="js-autoplay-btn btn-auto">
               <p>Auto-Play</p></button>
       </div>
-      
+      <div>
+       <p class="timer-paragraph">Time :</p> 
+      </div>
     </div>
     <script src="12-rock-paper-scissors.js"> </script>
 

@@ -9,6 +9,7 @@
   <body>
     <button class="btn-add">Add</button>
     <p class="paragraph-add"></p>
+    <button onclick="" class="js-button">CAPITAL</button>
     <script>
       // const func1 = function greeting(greetings) {
       //   greetings = "hello";
@@ -47,6 +48,31 @@
         clearTimeout(id);
       }, 1500);
       console.log(id);
+      //add event listener run some code when we interact with element
+      //add event listener run some code when we interact with element
+      const buttonElem = document.querySelector(".js-button");
+      // buttonElem.addEventListener("click", () => {
+      //   console.log("clicked");
+      // });
+      const eventListener = () => {
+        console.log("Clicked from event listener");
+      };
+      buttonElem.addEventListener("click", eventListener);
+      buttonElem.removeEventListener("click", eventListener);
+
+      // buttonElem.addEventListener("click", () => {
+      //   console.log("clicked2");
+      // });
+      console.log(
+        [1, 3, -4, -5, 2, -2].filter((value, index) => {
+          return value >= 0;
+        })
+      );
+      console.log(
+        [1, 4, 5].map((value, index) => {
+          return value + index;
+        })
+      );
     </script>
   </body>
 </html>

@@ -2,6 +2,23 @@
 //add query selector to local storage cuz the other is
 //local
 
+let timer = document.querySelector(".timer-paragraph");
+let date = Date.toString();
+console.log(date);
+setInterval(() => {
+  timer.innerHTML = date;
+}, 1000);
+
+document.body.addEventListener("keydown", (event) => {
+  //console.log(event.key);
+  if (event.key === "r") {
+    playGame("Rock");
+  } else if (event.key === "p") {
+    playGame("paper");
+  } else if (event.key === "s") {
+    playGame("scissors");
+  }
+});
 function switchMode() {
   const switchMode = document.querySelector(".js-btn-switch");
   document.body.classList.toggle("dark");
@@ -141,6 +158,22 @@ function autoPlay() {
     buttonElem.innerText = "Auto-Play";
   }
 }
+document.querySelector(".js-rock-btn").addEventListener(
+  "click", //playgame('rock') doesnt work
+  () => {
+    playGame("rock");
+  }
+);
+document.querySelector(".js-paper-btn").addEventListener(
+  "click", //playgame('rock') doesnt work
+  () => {
+    playGame("paper");
+  }
+);
+document.querySelector(".js-scissors-btn").addEventListener("click", () => {
+  playGame("scissors");
+});
+
 //here we combine the functions to create a new
 //better function
 function playGame(playerMove) {
