@@ -1,0 +1,52 @@
+<!-- Functions are values COURSE-->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Advanced Functions</title>
+  </head>
+  <body>
+    <button class="btn-add">Add</button>
+    <p class="paragraph-add"></p>
+    <script>
+      // const func1 = function greeting(greetings) {
+      //   greetings = "hello";
+      //   return greetings;
+      // };
+      // console.log(func1);
+      // console.log(typeof func1);
+
+      // const object1 = {
+      //   num: 2,
+      //   fun: function greeting() {
+      //     console.log("hello3");
+      //   },
+      // };
+      // console.log(object1.fun());
+      setTimeout(() => {
+        console.log("hey");
+        console.log("gg");
+      }, 2000); //2 params 1 function we want to run param 2 timers
+      // Asynchronous Functions : COMPUTER Won't wait till it executes setTimemout...
+      setInterval(() => {
+        //async function and looping it
+        console.log("interval line 1");
+        console.log("interval line 2");
+      }, 5000);
+      console.log("what ???");
+      //Upgrading the to-do-list project
+      ["dinner", "dishes"].forEach((value, index) => {
+        console.log(value, index);
+      });
+      //exercice 12f
+
+      const id = setTimeout((index) => {
+        let g = document.querySelector(".paragraph-add");
+        g.innerText += `Added ! ${index}`;
+        clearTimeout(id);
+      }, 1500);
+      console.log(id);
+    </script>
+  </body>
+</html>

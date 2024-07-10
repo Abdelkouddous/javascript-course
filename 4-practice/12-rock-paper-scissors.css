@@ -1,0 +1,70 @@
+/* */
+body {
+  background-color: rgb(241, 241, 241);
+  color: rgb(45, 45, 45);
+  margin: 1px;
+}
+p {
+  font-weight: bold;
+}
+body.dark {
+  background-color: rgb(45, 45, 45);
+  color: white;
+  font-family: Roboto;
+  font-size: 16px;
+  margin: 1px;
+}
+.btn-switch {
+  background-color: rgb(45, 45, 45);
+  color: rgb(241, 241, 241);
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+  width: 50px;
+  align-items: center;
+  font-size: 16px;
+}
+.btn-auto {
+  height: 120px;
+  width: 120px;
+  border-radius: 50%;
+  color: rgb(240, 240, 240);
+  background-color: rgb(45, 45, 45);
+  border: solid;
+  font-size: 16px;
+  font-weight: bold;
+}
+.btn-switch.dark,
+.btn-auto.dark {
+  background-color: white;
+  color: rgb(45, 45, 45);
+  border-radius: 50%;
+  border: none;
+  height: 50px;
+}
+
+.btn-auto:hover {
+  box-shadow: 3px 3px 8px rgb(255, 244, 224);
+}
+.btn-auto.dark:hover {
+  box-shadow: 3px 3px 8px rgb(51, 49, 44);
+}
+
+button:hover {
+  box-shadow: 1px 1px 8px rgb(255, 162, 0);
+}
+.move-icn {
+  height: 60px;
+  /* align-items: center; */
+}
+/*  */
+h1 {
+  font-size: 48px;
+}
+
+div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2px;
+}

@@ -1,178 +1,187 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>DOM Projects</title>
-  <style>
-    /* @media screen  {
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Projects</title>
+    <style>
+      /* @media screen(max-width: 767px)  {
       
       
     } */
-    body{
-      background-color: rgb(241, 241, 241);
-      height: 900px;
-      margin: 30px;
-    }
-    body.dark{
-      background-color: rgb(45, 45, 45);
-      color:white;
-      font-family: Roboto;
-      margin: 30px;
-    }
-    .btn-subs{
-      background-color: black;
-      color: white;
-      border: none;
-      border-radius: 18px;
-      width: 108px;
-      height: 36px;
-      font-size: 14px;
-      font-weight: bold;
-      padding: auto;
-      cursor: pointer;
-    }
-    .btn-subs:hover{
-      box-shadow: 2px 2px 4px black;
-    }
-    .btn-calculate{
-      background-color: green;
-      border: none;
-      padding: 5px 10px;
-      height: 40px;
-      width: 80px;
-      color:white;
-      font-size: 14px;
-      cursor: pointer;
-      
-    }
-    .btn-subscribed{
-      background-color: whitesmoke;
-      color: rgb(50,50, 50);
+      body {
+        background-color: rgb(241, 241, 241);
+        height: 900px;
+        margin: 30px;
+        font-family: Roboto;
+      }
+      body.dark {
+        background-color: rgb(45, 45, 45);
+        color: white;
+        height: 900px;
+        margin: 30px;
+        font-family: Roboto;
+      }
+      .btn-subs {
+        background-color: black;
+        color: white;
+        border: none;
+        border-radius: 18px;
+        width: 108px;
+        height: 36px;
+        font-size: 14px;
+        font-weight: bold;
+        padding: auto;
+        cursor: pointer;
+      }
+      .btn-subs:hover {
+        box-shadow: 2px 2px 4px black;
+      }
+      .btn-calculate {
+        background-color: green;
+        border: none;
+        padding: 5px 10px;
+        height: 40px;
+        width: 80px;
+        color: white;
+        font-size: 14px;
+        cursor: pointer;
+      }
+      .btn-subscribed {
+        background-color: whitesmoke;
+        color: rgb(50, 50, 50);
+      }
+      .btn-switch {
+        background-color: black;
+        color: white;
+        border-radius: 50%;
+        border: none;
+        height: 50px;
+      }
+      .btn-switch.dark {
+        background-color: white;
+        color: black;
+        border-radius: 50%;
+        border: none;
+        height: 50px;
+      }
+      a.dark {
+        text-decoration: none;
+      }
+      .cost-input {
+        font-size: 16px;
+        padding: 4px;
+        height: 30px;
+        width: 200px;
+      }
+    </style>
+  </head>
 
-    }
-    .btn-switch{
-      background-color: black;
-      color: white;
-      border-radius: 50%;
-      border: none;
-      height: 50px;
-    }
-    .btn-switch.dark {
-      background-color: white;
-      color: black;
-      border-radius: 50%;
-      border: none;
-      height: 50px;
-    }
-    a.dark {
-      text-decoration: none;
-    }
-    .cost-input{
-      font-size: 16px;
-      padding: 4px;
-      height: 30px;
-      width: 200px;
-    }
-  </style>
-</head>
-
-<body>
-  <div>
-   <div style="
-   
-    display: flex; 
-    flex-direction: row; 
-    justify-content: space-between;
-    align-items: center;
-
-    ">
-    <h1> YouTube Subscribe Button</h1>
-    <button class="js-btn-switch btn-switch " onclick="switchMode()"> Switch</button>
-  </div> 
-    <button class ="js-subs-btn btn-subs  " onclick="subscribe()">Subscribe</button>
-  </div>
-
-  <div>
-    <p> Link to rock paper scissor game <a href='06-rock-papers-scissors.html' target="_blank">here: </a> </p>
-
-
-  </div>
-  <div>
-    <p>
-      Amazon shipping calculator:
-    </p>
-    <div style="margin-top: 10px; display: flex; 
-      align-items: center ; padding:auto">
-      <input type="number" placeholder="Cost of order" class="js-cost-input cost-input"
-      onkeyup="handleCostKeyDown(event)
-      ">
-      <button class ="btn-calculate" onclick="calculate()"> Calculate </button>
-      
+  <body>
+    <div>
+      <div
+        style="
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          align-items: center;
+        "
+      >
+        <h1>YouTube Subscribe Button</h1>
+        <button class="js-btn-switch btn-switch" onclick="switchMode()">
+          Switch
+        </button>
+      </div>
+      <button class="js-subs-btn btn-subs" onclick="subscribe()">
+        Subscribe
+      </button>
     </div>
-    <p class="js-total-cost"> </p>
-   
-  </div>
 
-  <div>
-    <h1> exercice:</h1>
-    <input type="text" class="text-input" placeholder="Your Name "
-    onkeypress="showName()">
-    <p class = 'text-output'></p>
-  </div>
+    <div>
+      <p>
+        Link to rock paper scissor game
+        <a href="06-rock-papers-scissors.html" target="_blank">here: </a>
+      </p>
+    </div>
+    <div>
+      <p>Amazon shipping calculator:</p>
+      <div
+        style="
+          margin-top: 10px;
+          display: flex;
+          align-items: center;
+          padding: auto;
+        "
+      >
+        <input
+          type="number"
+          placeholder="Cost of order"
+          class="js-cost-input cost-input"
+          onkeyup="handleCostKeyDown(event)
+      "
+        />
+        <button class="btn-calculate" onclick="calculate()">Calculate</button>
+      </div>
+      <p class="js-total-cost"></p>
+    </div>
 
-  <!--JAVASCRIPT-->
-  <script>
-    //
-    function showName(){
-      const nameReader = document.querySelector('.text-input').value;
-      document.querySelector('.text-output')
-      .innerHTML = 'Hello : ' + nameReader;
-    }
-    //input type enter
-    function handleCostKeyDown(event){
-      console.log(event.key);
-      calculate();
-      // if(event.key === 'Enter'){
-      //   calculate();
-      // }
-    }
-    //input calculator
-    function calculate(){
-      let costOrder = document.querySelector('.js-cost-input');
-      let fullCost = Number(costOrder.value);
-     // console.log(typeof fullCost);
-      if (fullCost<50){
-        fullCost = fullCost + (0.02 * fullCost);
+    <div>
+      <h1>exercice:</h1>
+      <input
+        type="text"
+        class="text-input"
+        placeholder="Your Name "
+        onkeypress="showName()"
+      />
+      <p class="text-output"></p>
+    </div>
+
+    <!--JAVASCRIPT-->
+    <script>
+      //
+      function showName() {
+        const nameReader = document.querySelector(".text-input").value;
+        document.querySelector(".text-output").innerHTML =
+          "Hello : " + nameReader;
       }
-      //fullCost < 50 ? fullCost + (0.02 * fullCost) : fullcost;
-      document.querySelector('.js-total-cost')
-      .innerHTML = fullCost + '$';
-    }
-    //subs button
-    function subscribe(){
-      const buttonElem= document.querySelector(
-      '.js-subs-btn');
-      if (buttonElem.innerText==='Subscribe'){
-        buttonElem.innerText='Subscribed ';
-        buttonElem.classList.add('btn-subscribed');
+      //input type enter
+      function handleCostKeyDown(event) {
+        console.log(event.key);
+        calculate();
+        // if(event.key === 'Enter'){
+        //   calculate();
+        // }
       }
-      else{
-        buttonElem.innerText='Subscribe ';
-        buttonElem.classList.remove('btn-subscribed');
+      //input calculator
+      function calculate() {
+        let costOrder = document.querySelector(".js-cost-input");
+        let fullCost = Number(costOrder.value);
+        // console.log(typeof fullCost);
+        if (fullCost < 50) {
+          fullCost = fullCost + 0.02 * fullCost;
+        }
+        //fullCost < 50 ? fullCost + (0.02 * fullCost) : fullcost;
+        document.querySelector(".js-total-cost").innerHTML = fullCost + "$";
       }
-    }
-    function switchMode(){
-      const switchMode = document.querySelector('.js-btn-switch');
-      document.body.classList.toggle('dark');
-      //mistake
-      //switchMode.classList.toggle('btn-switch.dark');
-      //fixed
-      switchMode.classList.toggle('dark');
-    }
-  </script>
-
-</body>
-
+      //subs button
+      function subscribe() {
+        const buttonElem = document.querySelector(".js-subs-btn");
+        if (buttonElem.innerText === "Subscribe") {
+          buttonElem.innerText = "Subscribed ";
+          buttonElem.classList.add("btn-subscribed");
+        } else {
+          buttonElem.innerText = "Subscribe ";
+          buttonElem.classList.remove("btn-subscribed");
+        }
+      }
+      function switchMode() {
+        const switchMode = document.querySelector(".js-btn-switch");
+        document.body.classList.toggle("dark");
+        //mistake
+        //switchMode.classList.toggle('btn-switch.dark');
+        //fixed
+        switchMode.classList.toggle("dark");
+      }
+    </script>
+  </body>
 </html>

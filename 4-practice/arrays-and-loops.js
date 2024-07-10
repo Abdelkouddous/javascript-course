@@ -46,19 +46,18 @@ function addTodo() {
 
 function renderToDoList() {
   let todoListHTML = "";
-  for (let i = 1; i < toDoList.length; i++) {
-    todo = toDoList[i];
-    const { name, date } = todo;
+  toDoList.forEach((todoObject, index) => {
+    const { name, date } = todoObject;
     const html = `<input type = 'checkbox'/>   
     ${name} ${date} 
     <button type="button" onclick="    
-    toDoList.splice(${i}, 1);
+    toDoList.splice(${index}, 1);
     console.log(toDoList);
     renderToDoList();" class = "delete-btn">Delete
     </button> <br>
    `;
     todoListHTML += html;
-  }
+  });
   //we add paragraph output
   //
   document.querySelector(".paragraph-output").innerHTML = todoListHTML;

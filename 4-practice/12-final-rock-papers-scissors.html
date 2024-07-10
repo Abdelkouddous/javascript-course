@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rock paper scissors</title>
+  <link rel="stylesheet" href="12-rock-paper-scissors.css">
+</head>
+<body>
+    <div class = ''>   
+      <h1> Rock Paper Scissors 
+        <button class="js-btn-switch btn-switch" onclick="switchMode()"> 
+          ! </button>
+        </h1>
+    </div>
+   
+    <div>
+        <button onclick="playGame('rock');" class="btn-auto">
+          <img src="images/rock-emoji.png" 
+          class="move-icn">
+        </button>
+        <button onclick="playGame('paper');" class="btn-auto">
+          <img src="images/paper-emoji.png" 
+          class="move-icn">
+        </button>
+        <button onclick="playGame('scissors'); " class="btn-auto" >
+            <img src="images/scissors-emoji.png" alt="scissor"
+            class="move-icn">
+        </button>
+      </div>
+    
+        <div>
+          <p class = "phase">You 
+            <img src="images/rock-emoji.png" alt="rock" class="move-icn">
+            <img src="images/paper-emoji.png" alt="paper" class="move-icn">
+            Computer
+          </p>
+        </div>
+        <div> 
+              <p class = "res">Result :</p>
+        </div>
+         
+      </div>
+        <div><p class="gg"> </p></div>
+      <div>
+          <button onclick="reset()" class="btn-auto" >
+            <p>Reset<p></button>
+            <button onclick="autoPlay()" class="js-autoplay-btn btn-auto">
+              <p>Auto-Play</p></button>
+      </div>
+      
+    </div>
+    <script src="12-rock-paper-scissors.js"> </script>
+
+</body>
+</html>
