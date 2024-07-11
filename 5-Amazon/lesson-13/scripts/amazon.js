@@ -57,12 +57,14 @@ products.forEach((product) => {
 document.querySelector(".js-products-grid").innerHTML = productsHTML;
 
 document.querySelectorAll(".js-add-to-cart").forEach((button) => {
+  //date attributer
   button.addEventListener("click", () => {
     const productId = button.dataset.productId;
 
-    let matchingItem;
+    let matchingItem; //
 
     cart.forEach((item) => {
+      //if we find a product is in the cart ir not
       if (productId === item.productId) {
         matchingItem = item;
       }
@@ -75,6 +77,7 @@ document.querySelectorAll(".js-add-to-cart").forEach((button) => {
         productId: productId,
         quantity: 1,
       });
+      console.log(cart);
     }
 
     let cartQuantity = 0;
