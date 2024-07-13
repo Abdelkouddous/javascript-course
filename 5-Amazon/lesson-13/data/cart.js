@@ -1,7 +1,24 @@
-export const cart = [];
+// Normalizing the data
+/// add the ID only without adding images and stuff
+
+export let cart = [
+  {
+    productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+    quantity: 2,
+  },
+  {
+    productId: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
+    quantity: 1,
+  },
+  {
+    productId: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
+    quantity: 3,
+  },
+];
 
 //dont load the file with <script>
 //functions addToCart
+
 //and addToCartQuantity
 export function addToCart(productId) {
   let matchingItem; //
@@ -37,4 +54,16 @@ export function addToCartQuantity() {
     cartQuantity += cartItem.quantity;
   });
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+}
+
+export function removeFromCart(productId) {
+  const newCart = [];
+
+  cart.forEach((cartItem) => {
+    if (cartItem.productId !== productId) {
+      newCart.push(cartItem);
+    }
+  });
+  cart = newCart;
+  //
 }
