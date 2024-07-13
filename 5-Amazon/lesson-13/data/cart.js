@@ -1,20 +1,29 @@
 // Normalizing the data
 /// add the ID only without adding images and stuff
 
-export let cart = [
-  {
-    productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
-    quantity: 2,
-  },
-  {
-    productId: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
-    quantity: 1,
-  },
-  {
-    productId: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
-    quantity: 3,
-  },
-];
+export let cart = JSON.parse(localStorage.getItem("cart"));
+!cart
+  ? JSON.parse(localStorage.getItem("cart"))
+  : [
+      {
+        productId: "e43638ce-6aa0-4b85-b27f-e1d07eb678c6",
+        quantity: 2,
+      },
+      {
+        productId: "8c9c52b5-5a19-4bcb-a5d1-158a74287c53",
+        quantity: 1,
+      },
+      {
+        productId: "3ebe75dc-64d2-4137-8860-1f5a963e534b",
+        quantity: 3,
+      },
+    ];
+
+//
+//
+function saveToStorage() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
 
 //dont load the file with <script>
 //functions addToCart
@@ -39,8 +48,9 @@ export function addToCart(productId) {
       productId: productId,
       quantity: 1,
     });
-    console.log(cart);
+    // console.log(cart);
   }
+  saveToStorage();
 }
 
 /*The selected code defines a function called addToCartQuantity. This function calculates the total quantity of items in the shopping cart by iterating through the cart array and adding up the quantities of each item. The total quantity is then displayed in the HTML element with the class "js-cart-quantity".
@@ -65,5 +75,6 @@ export function removeFromCart(productId) {
     }
   });
   cart = newCart;
+  saveToStorage();
   //
 }
