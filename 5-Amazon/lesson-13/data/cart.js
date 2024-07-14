@@ -1,4 +1,6 @@
-// Normalizing the data
+// import dayjs from "https://unpkg.com/dayjs@1.11.10/esm/index.js";
+// import { deliveryOptions } from "../data/delivery-options.js";
+
 /// add the ID only without adding images and stuff
 
 export let cart = JSON.parse(localStorage.getItem("cart"));
@@ -63,6 +65,7 @@ export function addToCart(productId) {
 The function is called whenever a product is added to the cart, ensuring that the cart quantity is always up-to-date. This is achieved by attaching an event listener to the "Add to Cart" buttons, which calls the addToCart function and then addToCartQuantity.
 
 The addToCartQuantity function is a crucial part of the shopping cart functionality, as it provides real-time updates to the user about the total quantity of items in their cart.*/
+
 export function addToCartQuantity() {
   let cartQuantity = 0;
   cart.forEach((cartItem) => {
@@ -82,4 +85,39 @@ export function removeFromCart(productId) {
   cart = newCart;
   saveToStorage();
   //
+}
+
+// adding a function to update delivery options
+//and update the page
+
+//1 - loop through the cart nad find the product
+//2 - update the delviery optionId of the product
+
+export function updateDeliveryOption(productId, deliveryOptionId) {
+  let matchingItem; // lloop through the cart and find the product
+  cart.forEach((cartItem) => {
+    // if we find a product is in the cart or not
+    // this will give us the cart item
+    // that matches the product id
+    // and save it in matchingItem variable
+    if (productId === cartItem.productId) {
+      matchingItem = cartItem;
+    }
+  });
+  //what i forgot :)
+  //adding these two
+  matchingItem.deliveryOptionId = deliveryOptionId;
+  saveToStorage();
+
+  //extra
+
+  // deliveryOptions.forEach((deliveryOption) => {
+  //   // const today = new Date(2024, 6, 13);
+  //   //adding date behqaviour
+  //   const today = dayjs();
+  //   const deliveryDate = today.add(deliveryOption.deliveryDays, "days");
+  //   const dateString = deliveryDate.format("dddd, MMMM D");
+  //   document.querySelector(".js-delivery-date").innerText =
+  //     "Delivery Date: " + dateString;
+  // });
 }
