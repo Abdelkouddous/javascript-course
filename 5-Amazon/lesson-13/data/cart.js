@@ -47,7 +47,7 @@ export function addToCart(productId) {
   if (matchingItem) {
     //to modify later for product addition more
     //than once
-    matchingItem.quantity += 1;
+    matchingItem.quantity++;
   } else {
     cart.push({
       productId: productId,
@@ -66,12 +66,13 @@ The function is called whenever a product is added to the cart, ensuring that th
 
 The addToCartQuantity function is a crucial part of the shopping cart functionality, as it provides real-time updates to the user about the total quantity of items in their cart.*/
 
+let cartQuantity = 0;
 export function addToCartQuantity() {
-  let cartQuantity = 0;
   cart.forEach((cartItem) => {
     cartQuantity += cartItem.quantity;
   });
   document.querySelector(".js-cart-quantity").innerHTML = cartQuantity;
+  document.querySelector(".js-checkout-qtt").innerHTML = cartQuantity;
 }
 
 export function removeFromCart(productId) {

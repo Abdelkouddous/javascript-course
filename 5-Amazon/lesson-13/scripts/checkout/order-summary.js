@@ -1,5 +1,10 @@
 //15 : 01 : 00
-import { updateDeliveryOption, cart, removeFromCart } from "../../data/cart.js";
+import {
+  updateDeliveryOption,
+  cart,
+  removeFromCart,
+  // cartQuantity,
+} from "../../data/cart.js";
 import { getProduct, products } from "../../data/products.js";
 import { formatCurrency } from "../utils/money.js";
 import {
@@ -22,8 +27,9 @@ export function renderOrderSummary() {
 
   checkoutHTML = `
 Checkout (<a class="return-to-home-link" href="amazon.html">
-${""} </a>)
-`;
+          <p class = "js-checkout-qtt">$${"itemsQtt"}</p>
+          </a>)
+          `;
   document.querySelector(".js-checkout").innerHTML = checkoutHTML;
   cart.forEach((cartItem) => {
     //getting the productID
@@ -119,6 +125,9 @@ ${""} </a>)
       //console.log(productId);
       //already done
       removeFromCart(productId);
+      //added renderPayment summary
+      //to regenerate the payment cost
+      renderPaymentSummary();
       console.log(cart);
       const container = document.querySelector(
         `.js-cart-item-container-${productId}`
@@ -174,8 +183,8 @@ ${""} </a>)
       // import delvieryOptions
       //how? create data attribute to acess it on html
       updateDeliveryOption(productId, deliveryOptionId);
-      renderOrderSummary();
       renderPaymentSummary();
+      renderOrderSummary();
     });
   });
 }
